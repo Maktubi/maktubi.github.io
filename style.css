@@ -88,3 +88,63 @@ hr{border:none; border-top:1px solid var(--line); margin:26px 0}
   color:var(--muted);
   font-size:14px;
 }
+/* --- Brain map homepage --- */
+.map{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background: radial-gradient(1200px 600px at 30% 20%, rgba(147,183,255,0.12), transparent 60%),
+              radial-gradient(900px 500px at 80% 70%, rgba(255,255,255,0.06), transparent 55%),
+              rgba(255,255,255,0.02);
+}
+
+.rooms{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:12px;
+}
+
+.room{
+  display:block;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background: rgba(255,255,255,0.02);
+  min-height:120px;
+  position:relative;
+  overflow:hidden;
+}
+
+.room:before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background: radial-gradient(240px 140px at 30% 30%, rgba(147,183,255,0.15), transparent 60%),
+              radial-gradient(220px 160px at 70% 60%, rgba(255,255,255,0.10), transparent 60%);
+  transform: rotate(-8deg);
+  opacity:0.7;
+}
+
+.room > *{ position:relative; }
+
+.room h3{ margin:0 0 6px 0; font-size:18px; }
+.room p{ margin:0; color:var(--muted); font-size:14px; line-height:1.5; }
+
+.room:hover{
+  transform: translateY(-1px);
+  transition: transform 120ms ease;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Layout positions (the “brain” shape) */
+.r-essays{ grid-column: 1 / span 7; }
+.r-sketch{ grid-column: 8 / span 5; }
+.r-poetry{ grid-column: 1 / span 5; }
+.r-frag{ grid-column: 6 / span 7; }
+.r-manifesto{ grid-column: 3 / span 8; }
+
+@media (max-width: 700px){
+  .rooms{ grid-template-columns: 1fr; }
+  .r-essays,.r-sketch,.r-poetry,.r-frag,.r-manifesto{ grid-column:auto; }
+}
