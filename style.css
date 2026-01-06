@@ -1,4 +1,4 @@
-:root{
+:root{@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Naskh+Arabic:wght@400;600&display=swap');
   --bg:#0b0d10;
   --panel:#0f141b;
   --text:#e9eef6;
@@ -9,6 +9,8 @@
 
 *{box-sizing:border-box}
 body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
   margin:0;
   background:var(--bg);
   color:var(--text);
@@ -23,6 +25,11 @@ a:hover{text-decoration:underline}
   max-width: 900px;
   margin: 0 auto;
   padding: 56px 20px;
+} .ar, .title[dir="rtl"], h1[dir="rtl"]{
+  font-family: "Noto Naskh Arabic", serif;
+  direction: rtl;
+  text-align: right;
+  letter-spacing: 0;
 }
 
 .header{
